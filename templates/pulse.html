@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
+    <title>Check health</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/linericon/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/owl-carousel/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/lightbox/simpleLightbox.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/nice-select/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/animate-css/animate.css') }}">
+   
+    <!-- main css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!--================Header Menu Area =================-->
+    
+   
+    <header class="header_area">
+        
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="index.html"><i class="fa fa-blind"></i>HealthCareLabs</a>                 
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                     aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <div class="row ml-0 w-100">
+                            <div class="col-lg-12 pr-0">
+                                <ul class="nav navbar-nav center_nav pull-right">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="index.html"><span class="fa fa-home"></span> Home</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="team.html"><span class="fa fa-users"></span> Team</a>
+                                    </li>
+                                  
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--================Header Menu Area =================-->
+
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>Health Report</h2>
+                    <div class="page_link">
+                        <a href="index.html">Home</a>
+                        <a href="pulse.html">Pulse</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section></br></br></br>
+    <!--================End Home Banner Area =================-->
+     
+
+
+<!-- form begins -->
+<script type="text/javascript">
+    function inputUpdate(e){
+        if(e.checked == true){
+            //alert(e.value);
+            var id = e.value;
+            console.log(id);
+            document.getElementById(id).style.display = 'block';
+            
+            
+        }
+        else{
+            var id = e.value;
+            console.log(id);
+            document.getElementById(id).style.display = 'none';
+        }
+        
+        
+    }
+
+    
+</script>
+
+
+<div class="container" >
+    
+<form method="post" action="files.html">
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox" style="font-size: 17px;">
+            <label><input type="checkbox" value="radius_mean" name="options" onclick="inputUpdate(this);">Radius Mean</label>
+          </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="texture_mean" name="options" onclick="inputUpdate(this);">Texture mean</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="perimeter_mean" name="options" onclick="inputUpdate(this);">Perimeter mean</label>
+        </div>
+    </div>
+   </div>
+
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox" style="font-size: 17px;">
+            <label><input type="checkbox" value="area_mean" name="options" onclick="inputUpdate(this);">Area Mean</label>
+          </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="smoothness_mean" name="options" onclick="inputUpdate(this);">Smoothness mean</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="compactness_mean" name="options" onclick="inputUpdate(this);">Compactness mean</label>
+        </div>
+    </div>
+   </div>
+
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox" style="font-size: 17px;">
+            <label><input type="checkbox" value="concavity_mean" name="options" onclick="inputUpdate(this);">Concavity Mean</label>
+          </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="concave points_mean" name="options" onclick="inputUpdate(this);">Concave point mean</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="symmetry_mean" name="options" onclick="inputUpdate(this);">Symmetry mean</label>
+        </div>
+    </div>
+   </div>
+
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox" style="font-size: 17px;">
+            <label><input type="checkbox" value="fractal_dimension_mean" name="options" onclick="inputUpdate(this);">Fractal dimension Mean</label>
+          </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="radius_se" name="options" onclick="inputUpdate(this);">By radius</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="perimeter_se" name="options" onclick="inputUpdate(this);">By perimeter</label>
+        </div>
+    </div>
+   </div>
+
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="texture_se" name="options" onclick="inputUpdate(this);">By texture</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="area_se" name="options" onclick="inputUpdate(this);">By area</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="smoothness_se" name="options" onclick="inputUpdate(this);">By smoothness</label>
+        </div>
+    </div>
+   </div>
+
+ <div class="row">
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="compactness_se" name="options" onclick="inputUpdate(this);">By Compactness</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="concavity_se" name="options" onclick="inputUpdate(this);">By Concavity</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="concave points_se" name="options" onclick="inputUpdate(this);">By Concave points</label>
+        </div>
+    </div>
+   </div>
+
+ <div class="row">
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="symmetry_se" name="options" onclick="inputUpdate(this);">By Symmetry</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="fractal_dimension_se" name="options" onclick="inputUpdate(this);">By Fractal dimension</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="radius_worst" name="options" onclick="inputUpdate(this);">Radius worst</label>
+        </div>
+    </div>
+   </div>
+
+ <div class="row">
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="texture_worst" name="options" onclick="inputUpdate(this);">Texture worst</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="perimeter_worst" name="options" onclick="inputUpdate(this);">Perimeter worst</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="area_worst" name="options" onclick="inputUpdate(this);">Area worst</label>
+        </div>
+    </div>
+   </div>
+
+ <div class="row">
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="smoothness_worst" name="options" onclick="inputUpdate(this);">Smoothness worst</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="compactness_worst" name="options" onclick="inputUpdate(this);">Compactness worst</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="concavity_worst" name="options" onclick="inputUpdate(this);">Concavity worst</label>
+        </div>
+    </div>
+   </div>
+
+    <div class="row">
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="concave points_worst" name="options" onclick="inputUpdate(this);">Concave points worst</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="symmetry_worst" name="options" onclick="inputUpdate(this);">Symmetry worst</label>
+        </div>
+    </div>
+    <div class="col-sm-4" style="background-color:lightblue">
+         <div class="checkbox"style="font-size: 17px;">
+            <label><input type="checkbox"  value="fractal_dimension_worst" name="options" onclick="inputUpdate(this);">Fractal dimension worst</label>
+        </div>
+    </div>
+   </div>
+
+    <center style="margin: 10px 0px;" id="optional_header">
+        <h1><ul>Optional: If you have the values of above selected checkboxes then you can test whether you have Breast cancer or not</ul></h1>
+    </center>
+
+    
+    <center>
+    <table class="table" style="margin-left: 30%;">
+        <tr id="radius_mean" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Radius Mean: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="radius_mean" placeholder="cm"/>
+            </td>
+        </tr>
+        <tr id="texture_mean" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Texture Mean: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="texture_mean" placeholder="cm" />
+            </td>
+        </tr>
+        <tr id="perimeter_mean" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Perimeter Mean: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="perimeter_mean" placeholder="cm"/>
+            </td>
+        </tr>
+        <tr id="area_mean" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Area Mean: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="area_mean" placeholder="cm sq."/>
+            </td>
+        </tr>
+        <tr id="smoothness_mean" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Smoothness Mean: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="smoothness_mean" />
+            </td>
+        </tr>
+        <tr id="compactness_mean" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Compactness Mean: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="compactness_mean" />
+            </td>
+        </tr>
+        <tr id="concavity_mean" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Concavity Mean: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="concavity_mean" />
+            </td>
+        </tr>
+        <tr id="concave points_mean" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Concave points Mean: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="concave points_mean" />
+            </td>
+        </tr>
+        <tr id="symmetry_mean" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Symmetry Mean: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="symmetry_mean" />
+            </td>
+        </tr>
+        <tr id="fractal_dimension_mean" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Fractal Dimension Mean: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="fractal_dimension_mean" />
+            </td>
+        </tr>
+        <tr id="radius_se" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Radius: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="radius_se" placeholder="cm"/>
+            </td>
+        </tr>
+        <tr id="perimeter_se" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Perimeter: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="perimeter_se" placeholder="cm"/>
+            </td>
+        </tr>
+        <tr id="texture_se" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Texture: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="texture_se" placeholder="cm"/>
+            </td>
+        </tr>
+        <tr id="area_se" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Area: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="area_se" placeholder="cm sq."/>
+            </td>
+        </tr>
+        <tr id="smoothness_se" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Smoothness: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="smoothness_se" />
+            </td>
+        </tr>
+        <tr id="compactness_se" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Compactness: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="compactness_se" />
+            </td>
+        </tr>
+        <tr id="concavity_se" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Concavity: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="concavity_se" />
+            </td>
+        </tr>
+        <tr id="concave points_se" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Concave points: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="concave points_se" />
+            </td>
+        </tr>
+        <tr id="symmetry_se" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Symmetry: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="symmetry_se" />
+            </td>
+        </tr>
+        <tr id="fractal_dimension_se" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Fractal Dimension: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="fractal_dimension_se" />
+            </td>
+        </tr>
+        <tr id="radius_worst" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Radius worst: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="radius_worst" placeholder="cm"/>
+            </td>
+        </tr>
+        <tr id="texture_worst" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Texture worst: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="texture_worst" />
+            </td>
+        </tr>
+        <tr id="perimeter_worst" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Perimeter worst: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="perimeter_worst" placeholder="cm"/>
+            </td>
+        </tr>
+        <tr id="area_worst" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Area worst: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="area_worst" placeholder="cm sq."/>
+            </td>
+        </tr>
+        <tr id="smoothness_worst" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Smoothness worst: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="smoothness_worst" />
+            </td>
+        </tr>
+        <tr id="compactness_worst" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Compactness worst: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="compactness_worst" />
+            </td>
+        </tr>
+        <tr id="concavity_worst" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Concavity worst: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="concavity_worst" />
+            </td>
+        </tr>
+        <tr id="concave points_worst" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Concave points worst: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="concave points_worst" />
+            </td>
+        </tr>
+        <tr id="symmetry_worst" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Symmetry worst: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="symmetry_worst" />
+            </td>
+        </tr>
+        <tr id="fractal_dimension_worst" style="display: none;">
+            <td style="margin: 2px 10px;padding: 2px 5px;color:black;font-weight: bold;font-size: 20px;width: 50%;">
+                <label >Fractal Dimension worst: </label>
+            </td>
+            <td>
+                <input style="padding: 5px;" type="text" class="form-control" name="fractal_dimension_worst" />
+            </td>
+        </tr>
+    </table>
+    </center>
+        
+    
+    
+  
+
+
+   <div class="col-sm-12" style="margin-top:8px;">
+       <center><input type="submit" class="btn btn-primary" /></center>
+   </div>
+</form>
+</div>
+
+
+
+
+
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area p_120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post row">
+                        <div class="col-lg-12">
+                        </div>
+                        <div class="col-lg-3  col-md-3">
+                            <div class="blog_info text-right">
+                                <div class="post_tag">
+                                    <a href="#">Disease</a>
+                                    <a class="active" href="#">Breast Cancer,</a>
+                                    <a href="#">Health</a>
+                                   
+                                </div>
+                                <ul class="blog_meta list">
+                                    <li>
+                                        <a href="#">User_name
+                                            <i class="lnr lnr-user"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">April, 2019
+                                            <i class="lnr lnr-calendar-full"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                      <!--   <a href="#"> Views
+                                            <i class="lnr lnr-eye"></i>
+                                        </a> -->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-25 blog_details">
+                            <h2>What is Breast Cancer?</h2>
+                            <p class="excert">
+                                Breast cancer (BC) is one of the most common cancers among women worldwide, representing the majority of new cancer cases and cancer-related deaths according to global statistics, making it a significant public health problem in today’s society. 
+                            </p>
+                        </div>
+
+                        <!-- <div class="col-lg-12" style = "padding-left: 80 px">
+                            <div class="quotes">
+                                <h5><i>The average pulse rate of an elderly men is 70-73 bpm.</i></h5>
+                                <h5><i>The average pulse rate of an elderly women is 73-76 bpm.</i></h5>
+                                <h5><i>The average pulse rate while walking  for an elderly men is 80-83 bpm and that for an elderly women is 83-86 bpm.</i></h5>
+                                Some Our photos and work with pulse sensor how to use.
+                                You can seen below:
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img class="img-fluid" src="img/x1.jpg" alt="">
+                                </div>
+                                <div class="col-6">
+                                    <img class="img-fluid" src="img/blog/post-img2.jpg" alt="">
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    
+    </section>
+    <!--================Blog Area =================-->
+
+    <!--================ start footer Area =================-->
+    <footer class="footer-area section_gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2  col-md-6">
+                    <div class="single-footer-widget">
+                        <h6>Top Products</h6>
+                        <ul class="footer-nav">
+                            <li>
+                                <a href="#">Managed Website</a>
+                            </li>
+                            <li>
+                                <a href="#">health list</a>
+                            </li>
+                            <li>
+                                <a href="#">Service</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4  col-md-6">
+                    <div class="single-footer-widget mail-chimp">
+                        <h6 class="mb-20">Contact Us</h6>
+                        <p>
+                            PDPM IIITDM Jabalpur, MP 482005
+                        </p>
+                        <h3>8542035535</h3>
+                        <h3>2016185@iiitdmj.ac.in
+                    </div>
+                </div>
+                <div class="col-lg-6  col-md-12">
+                    <div class="single-footer-widget newsletter">
+                        <h6>Mail Us</h6>
+                        <p>You can trust us. we only send promo offers, not a single spam.</p>
+                        <div id="mc_embed_signup">
+                            <form target="_blank" action="index.html"&amp;id=#"
+                             method="get" class="form-inline">
+
+                                <div class="form-group row">
+                                    <div class="col-lg-7 col-md-6 col-sm-12">
+                                        <input name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
+                                         required="" type="email">
+                                    </div>
+
+                                    <div class="col-lg-5 col-md-12">
+                                        <button class="nw-btn main_btn circle">get started
+                                            <span class="lnr lnr-arrow-right"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="info"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row footer-bottom d-flex justify-content-between">
+                <p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved<i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#home" target="_blank">Prakash nidhi verma</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+                <div class="col-lg-4 col-sm-12 footer-social">
+                    <a href="#">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-dribbble"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--================ End footer Area =================-->
+
+
+
+    <!--================ Optional JavaScript =================-->
+    <!--================ jQuery first, then Popper.js, then Bootstrap JS =================-->
+    <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/nice-select/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/isotope/isotope-min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendors/owl-carousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="{{ url_for('static', filename='js/mail-script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    
+</body>
+
+</html>

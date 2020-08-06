@@ -1,3 +1,8 @@
+The aim of using logistic regression is to obtain the significant clinical factors contributing more towards higher probability of
+breast cancer. ML models on mammograms are used to diagnose breast cancer for correct classification.
+
+How to run:
+
 1. Install virtual environment
 sudo apt install python-virtualenv
 2. Then make an enviroment
